@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body>
+		<script> 
+			var cadena = "Ponemos cualquier texto";
+			
+			// console.log("La variable tiene un valor de \"" + cadena + \"" y una longitud de " + cadena.length + " caracteres. Tipo de Variable: " + typeof cadena.valueOf());
+			console.log(cadena.toUpperCase());
+			console.log(cadena.toLowerCase());
+			console.log(cadena.charAt(0));
+			console.log(cadena.substring(6,15));
+			console.log(cadena.substring(5));			
+			console.log(cadena.indexOf("e"));
+			console.log(cadena.lastIndexOf("e"));
+					
+			var arrayCadenas = cadena.split("e");
+			console.log(cadena.split("e"));
+			
+			var otraCadena = arrayCadenas.join("*");
+			console.log(otraCadena);
+			
+			console.log(arrayCadenas[1]);
+			console.log(typeof arrayCadenas[6]);
+			arrayCadenas[6] = 85;
+			console.log(typeof arrayCadenas[6] + " y su valor " + arrayCadenas[6].valueOf());
+			console.log("El array tiene una longitud de " + arrayCadenas.length);
+			console.log("Recupero el último elemento del array y me lo follo " + arrayCadenas.pop() + " y se queda con una longitud de " + arrayCadenas.length);
+			
+			arrayCadenas.push("OTRO ELEMENTO");
+			console.log("El array tiene una longitud de " + arrayCadenas.length + " y el último elemento es de tipo " + typeof arrayCadenas[arrayCadenas.length - 1] + " y tiene el valor: " + arrayCadenas[arrayCadenas.length - 1]);
+			arrayCadenas.push(5);
+			console.log("El array tiene una longitud de " + arrayCadenas.length + " y el último elemento es de tipo " + typeof arrayCadenas[arrayCadenas.length - 1] + " y tiene el valor: " + arrayCadenas[arrayCadenas.length - 1]);
+			arrayCadenas.push(true);
+			console.log("El array tiene una longitud de " + arrayCadenas.length + " y el último elemento es de tipo " + typeof arrayCadenas[arrayCadenas.length - 1] + " y tiene el valor: " + arrayCadenas[arrayCadenas.length - 1]);
+			arrayCadenas.push(new Date());
+			console.log("El array tiene una longitud de " + arrayCadenas.length + " y el último elemento es de tipo " + typeof arrayCadenas[arrayCadenas.length - 1] + " y tiene el valor: " + arrayCadenas[arrayCadenas.length - 1]);
+			
+		</script>
+	</body>
+</html>
+
+
+
+
+
