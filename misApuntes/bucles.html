@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body>
+		<script> 
+			function mi_funcion_for()
+			{
+				var unaVariable = "Variable Local";
+				for (var i = 0; i < 10; i++)
+				{
+					var otro = "otra";
+					console.log("Valor de i: " + i);
+				}
+				console.log("Valor de i al final del for" + i);
+				console.log("Valor de otra al final del for" + i);
+			}
+			
+			function mi_funcion_while()
+			{
+				var unaVariable = "Variable Local";
+				var i = 0;
+				while (i < 10)
+				{
+					var otro = "otra";
+					console.log("Valor de i: " + i);
+					i++;
+				}
+				console.log("Valor de i al final del for" + i);
+				console.log("Valor de otra al final del for" + i);
+			}
+			
+			function mi_funcion_dowhile()
+			{
+				var unaVariable = "Variable Local";
+				var i = 0;
+				do
+				{
+					var otro = "otra";
+					console.log("Valor de i: " + i);
+					i++;
+				} while (i < 10)
+				console.log("Valor de i al final del for" + i);
+				console.log("Valor de otra al final del for" + i);
+			}
+
+			mi_funcion_for();
+			mi_funcion_while();
+			mi_funcion_dowhile();
+			//console.log("Valor de otra fuera de la función: " + otra);
+		</script>
+	</body>
+</html>
+
+
+
+
+

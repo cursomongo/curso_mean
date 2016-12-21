@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body>
+		<script> 
+			var fecha = new Date();
+			console.log("Año Actual: " + fecha.getFullYear());
+			var otraFecha = fecha; // Aquí se guarda un objeto que hace REFERENCIA a fecha
+			fecha.setFullYear(1995);
+			console.log("Año: " + fecha.getFullYear());
+			cambiarFecha(1850);
+			console.log("Año tras cambiarla con una función: " + fecha.getFullYear());
+			function cambiarFecha(unaFecha)
+			{
+				fecha.setFullYear(unaFecha);
+			}
+		</script>
+	</body>
+</html>

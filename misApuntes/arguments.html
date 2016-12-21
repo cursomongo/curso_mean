@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Mi primera página</title>
+</head>
+<body>
+	<script> 
+		function listarArgumentos(argumento1, argumento2)
+		{
+			console.log("Número de elementos recibidos: " + arguments.length);
+
+			if (arguments.length > 0)
+			{
+				/*{
+					for (var d = 0; d <= arguments.length - 1; d++) {
+						console.log("Parámetro " + d +": " + arguments[d]);
+					}
+				}*/
+
+				for (argumento in arguments)
+				{
+					console.log(arguments + "." + argumento + " = " + arguments[argumento]);
+					console.log("Posición: " + argumento);
+				}
+
+				for (argumento of arguments)
+				{
+					console.log("Parámetro: " + argumento);
+				}				
+			}
+
+			switch(argumento1)
+			{
+				case "a":
+					console.log("El argumento1 vale " + argumento1);
+					break;
+				case "b":
+					console.log("El argumento1 vale " + argumento1);
+					break;
+				case "c":
+					console.log("El argumento1 vale " + argumento1);
+					break;
+				case "z":
+					console.log("El argumento1 vale " + argumento1);
+					break;
+				default:
+					console.log("default - El argumento1 vale " + argumento1);
+			}
+		}
+
+		console.log("--------------------------------------------------------");
+		listarArgumentos();
+		console.log("--------------------------------------------------------");
+		listarArgumentos("a");
+		console.log("--------------------------------------------------------");
+		listarArgumentos("c","b");
+		console.log("--------------------------------------------------------");
+		listarArgumentos("d","b","c");
+		console.log("--------------------------------------------------------");
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+<html></html>
