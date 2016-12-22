@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var numerogrande = -99;
+
+		var numero1, numero2, numero3;
+
+		do{
+			numero1 = prompt("Dime el número1", "0");	// statement
+		} while (isNaN(numero1));
+		
+		do{
+			numero2 = prompt("Dime el número2", "0");	// statement
+		} while (isNaN(numero2));
+		
+		do{
+			numero3 = prompt("Dime el número3", "0");	// statement
+		} while (isNaN(numero3));
+
+		numero1 = parseInt(numero1);
+		numero2 = parseInt(numero2);
+		numero3 = parseInt(numero3);
+
+		if (numero1 > numero2)  // El numero 1 es mayor que el numero2, por lo que compruebo si es mayor que el 3
+		{
+			if (numero1 > numero3)
+			{
+				numerogrande = numero1;
+			}	
+			else
+			{
+				numerogrande = numero3;
+			}
+		} //El número 2 es mayor que el número 1, por lo que compruebo si también es mayor que el número 3
+		if (numero2 > numero3)
+		{
+			numerogrande = numero2;
+		}
+		else
+		{
+			numerogrande = numero3;	
+		}
+
+		console.log(numero1);
+		console.log(numero2);
+		console.log(numero3);
+		console.log(numerogrande);
+
+	</script>
+	<div id="resultado">
+		
+	</div>
+	<script>
+		document.getElementById("resultado").innerHTML = "El número mayor de " + numero1 + ", " + numero2 + ", " + numero3 + " es el " + numerogrande;
+	</script>
+</body>
+</html>

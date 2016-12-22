@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		
+		var numeroAlumnos = parseInt(prompt("Número de alumnos", 0));
+
+		var ArrayAlumnos = new Array();
+
+		for (var i = 0; i < numeroAlumnos; i++) {
+			var nombre = prompt("Dime tu nombre");
+			var fnacimiento = prompt("Dame tu fecha de nacimiento", "dd/mm/aaaa");
+			var nuevoAlumno = new Object();
+			nuevoAlumno.nombre = nombre;
+			var infoFecha = fnacimiento.split("/");
+
+			nuevoAlumno.fechanacimiento = new Date(parseInt(infoFecha[2]),parseInt(infoFecha[1]) - 1,parseInt(infoFecha[0]));
+			
+			ArrayAlumnos[i] = nuevoAlumno;
+		}
+
+		for (var i = 0;  - 1; i >= 0; i--) {
+			
+		}
+	</script>
+</body>
+</html>

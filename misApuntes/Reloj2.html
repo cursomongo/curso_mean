@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div name="laFecha" id ="laFecha"/></div>
+	<div name="laHora" id ="laHora"/></div>
+	<button value ="Comenzar Reloj" onclick="arrancar()">Comenzar Reloj</button>
+	<button value ="Parar Reloj" onclick="parar()">Parar Reloj</button>
+	<hr/>
+	<div name="divPOO" id ="divPOO"/></div>
+</body>
+
+<script>
+
+	var miReloj = new NuestroReloj();
+	console.log(miReloj.timerID);
+	console.log(miReloj.timerFuncionando);
+	miReloj.comenzarReloj;
+
+	function NuestroReloj()
+	{
+		this.timerID = null;
+		this.timerFuncionando = false;
+
+		this.pararReloj = function ()
+		{
+			if (this.timerFuncionando)
+			{
+				clearTimeout(TimerID);
+			}
+		}
+
+		this.comenzarReloj = function()
+		{
+			console.log("comenarReloj");
+			this.pararReloj;
+			this.mostrarFechaHora;
+		}
+
+		this.mostrarFechaHora = function()
+		{
+			var ahora = new Date();
+
+			var horas 		= ahora.getHours();
+			var minutos 	= ahora.getMinutes();
+			var segundos 	= ahora.getSeconds();
+
+			var valorHora 	= "" + (( horas > 9) ? horas : "0" + horas );
+			var valorHora 	= valorHora + ":" +(( minutos > 9) ? minutos : "0" + minutos );
+			var valorHora 	= valorHora + ":" +(( segundos > 9) ? segundos : "0" + segundos );
+
+			console.log(valorHora);
+
+			document.getElementById("laHora").innerHTML = valorHora;
+			document.getElementById("laFecha").innerHTML = dimeDia() + ", " + ahora.getDate() + " de " + dimeMes() + " del año " + ahora.getFullYear();
+			
+			timerID = setTimeout(this.mostrarFechaHora, 1000);
+		}
+	}
+
+	function arrancar()
+	{
+		miReloj.comenzarReloj;
+	}
+	function parar()
+	{
+		miReloj.pararReloj;
+	}	
+
+	function dimeDia()
+	{
+		var ahora = new Date().getDay();
+
+		switch (ahora) {
+			case 0:
+				return "Domingo";
+				break;
+			case 1:
+				return "Lunes";
+				break;
+			case 2:
+				return "Martes";
+				break;
+			case 3:
+				return "Miércoles";
+				break;
+			case 4:
+				return "Jueves";
+				break;
+			case 5:
+				return "Viernes";
+				break;
+			case 6:
+				return "Sábado";
+				break;																
+			default:
+				return "Día Desconocido";
+				break;
+		}
+	}
+
+	function dimeMes()
+	{
+		var ahora = new Date().getMonth();
+
+		switch (ahora) {
+			case 0:
+				return "Enero";
+				break;
+			case 1:
+				return "Febrerp";
+				break;
+			case 2:
+				return "Marzo";
+				break;
+			case 3:
+				return "Abril";
+				break;
+			case 4:
+				return "Mayo";
+				break;
+			case 5:
+				return "Junio";
+				break;
+			case 6:
+				return "Julio";
+				break;																
+			case 7:
+				return "Agosto";
+				break;					
+			case 8:
+				return "Septiembre";
+				break;					
+			case 9:
+				return "Octubre";
+				break;					
+			case 10:
+				return "Noviembre";
+				break;																	
+			case 11:
+				return "Diciembre";
+				break;																	
+			default:
+				return "Mes Desconocido";
+				break;
+		}
+	}
+
+</script>
+
+</html>
+

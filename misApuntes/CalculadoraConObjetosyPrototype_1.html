@@ -1,0 +1,132 @@
+<!-- REALIZAR LA CALCULADORA CON OBJETOS EN JAVASCRIPT--> 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<center>
+		<form name="frmcalc">
+			Operando1: <input type="text" name="operando1" value="0" size="12">
+			<br>
+			Operando2: <input type="text" name="operando2" value="0" size="12">
+			<br>
+			<br>
+				<input type="button" name="suma" id ="btnsuma" value="+" onclick="opera(this.value)"/>
+				<input type="button" name="restar" id ="btnresta" value="-" onclick="opera(this.value)"/>
+				<input type="button" name="multiplicar" id ="btnmultiplica" value="*" onclick="opera(this.value)"/>
+				<input type="button" name="dividir" id ="btndivision" value="/" onclick="opera(this.value)"/>
+			<br>
+			<br>
+			Resultado: <input name="resultado" type="text" readonly>
+		</form>
+		<br>
+		<hr/>
+		<br>
+		<div id="texto">Operaciones realizadas:</div>
+	</center>
+	<script>
+
+		function opera(operacion)
+		{
+			var miCalculadora = new Calculadora();
+			miCalculadora.realizaOperacion(operacion);
+		}
+
+		function Calculadora()
+		{
+			this.operando1 = 0;
+			this.operando2 = 0;
+		}
+		
+		Calculadora.prototype.realizaOperacion = function(tipoDeOperacion)
+		{
+
+			var resultado = 0;
+			console.log(tipoDeOperacion);
+			switch (tipoDeOperacion) {
+				case "+":
+					resultado = parseInt(document.frmcalc.operando1.value) + parseInt(document.frmcalc.operando2.value);
+					break;
+				case "-":
+					resultado = parseInt(document.frmcalc.operando1.value) - parseInt(document.frmcalc.operando2.value);
+					break;
+				case "*":
+					resultado = parseInt(document.frmcalc.operando1.value) * parseInt(document.frmcalc.operando2.value);
+					break;
+				case "/":
+					resultado = parseInt(document.frmcalc.operando1.value) / parseInt(document.frmcalc.operando2.value);
+					break;															
+				default:
+					// statements_def
+					break;
+			}
+			pintarResultado(resultado);
+			anadirOperacionAlHistorico(tipoDeOperacion);								
+		}
+
+		function anadirOperacionAlHistorico(operacion)
+		{
+			document.getElementById("texto").innerHTML += "<br/>" + parseInt(document.frmcalc.operando1.value) + " " + operacion + " " + parseInt(document.frmcalc.operando2.value) + " = " + document.frmcalc.resultado.value;
+		}
+
+		function pintarResultado(resultado)
+		{
+			document.frmcalc.resultado.value = resultado;
+		}		
+
+/*		Calculadora.prototype.sumar = function(){
+			
+			var resultado = parseInt(document.frmcalc.operando1.value) + parseInt(document.frmcalc.operando2.value);
+			pintarResultado(resultado);
+			anadirOperacionAlHistorico("+");
+		}
+
+		Calculadora.prototype.restar = function(){
+			
+			var resultado = parseInt(document.frmcalc.operando1.value) - parseInt(document.frmcalc.operando2.value);
+			pintarResultado(resultado);
+			anadirOperacionAlHistorico("-");
+		}		
+
+		Calculadora.prototype.multiplicar = function(){
+			
+			var resultado = parseInt(document.frmcalc.operando1.value) * parseInt(document.frmcalc.operando2.value);
+			pintarResultado(resultado);
+			anadirOperacionAlHistorico("-");
+		}		
+
+		Calculadora.prototype.dividir = function(){
+			
+			var resultado = parseInt(document.frmcalc.operando1.value) / parseInt(document.frmcalc.operando2.value);
+			pintarResultado(resultado);
+			anadirOperacionAlHistorico("-");
+		}		
+*/
+/*		function sumar()
+		{
+			miCalculadora.realizaOperacion("+");
+		}
+
+		function restar()
+		{
+			miCalculadora.realizaOperacion("-");
+		}
+
+		function multiplicar()
+		{
+			miCalculadora.realizaOperacion("*");
+		}
+
+		function dividir()
+		{
+			miCalculadora.realizaOperacion("/");
+		}
+		*/
+	</script>
+</body>
+</html>
