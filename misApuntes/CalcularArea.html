@@ -1,0 +1,42 @@
+ENUNCIADO: <BR/><BR/>
+Similar a calculadora, un objeto Rectángulo, que tenga tres inputs, 2 de entrada (ancho, alto) y uno de resultado y un único método para calcularArea que calcule el área del rectángulo que sea llamado desde un botón "ÁREA".
+<BR/><BR/>
+<HR/>
+<BR/><BR/>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		Calcular Área Triangulo
+	</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+  <label for="ancho">Ancho:</label>
+  <input type="text" name="ancho" id="ancho"><br>
+  <label for="alto">Alto:</label>
+  <input type="text" name="alto" id="alto"><br>
+  <input type="button" onclick="calcularArea()" value="AREA">
+  <br/>
+  <label style="border: 1px solid" id = "resultado">Aquí saldrá el resultado</label>
+	<script>
+
+		function Triangulo(labase, laaltura) {
+			this.base = labase;
+			this.altura = laaltura;
+		}
+
+		Triangulo.prototype.calcularArea = function(){
+			return this.base * this.altura / 2;
+		}
+		
+		function calcularArea()
+		{
+			var miTriangulo = new Triangulo(document.getElementById("ancho").value, document.getElementById("alto").value);
+			document.getElementById("resultado").innerHTML = miTriangulo.calcularArea();
+		}
+	</script>
+</body>
+</html>

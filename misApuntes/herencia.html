@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Herencia de Figuras</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+  <label for="ancho">Ancho:</label>
+  <input type="text" name="ancho" id="ancho"><br><br>
+  <label for="alto">Alto:</label>
+  <input type="text" name="alto" id="alto"><br><br/>
+  <input type="button" onclick="calcularAreaDeFigura(new Rectangulo())" value="AREA RECTANGULO">
+  <input type="button" onclick="calcularAreaDeFigura(new Triangulo())" value="AREA TRIANGULO">
+  <br/>
+  <label style="border: 1px solid" id = "resultado">Aquí saldrá el resultado</label>
+	<script>
+		function Figura(labase, laaltura) {
+			this.base = labase;
+			this.altura = laaltura;
+		}
+
+		Figura.prototype.calcularArea = function(){
+			return "¡¡¡ Sobreescribe esté método !!!";
+		}
+
+		function Triangulo(labase, laaltura)
+		{
+			Figura.call(this, labase, laaltura);
+		}
+
+		Triangulo.prototype.calcularArea = function(){
+			return this.base * this.altura / 2;
+		}
+
+		function Rectangulo(labase, laaltura)
+		{
+			Figura.call(this, labase, laaltura);
+		}
+
+		Rectangulo.prototype.calcularArea = function(){
+			return this.base * this.altura;
+		}
+
+		function calcularAreaDeFigura(objetoFigura)
+		{
+			document.getElementById("resultado").innerHTML = objetoFigura.calcularArea(document.getElementById("ancho").value, document.getElementById("alto").value);
+		}
+
+
+	</script>
+</body>
+</html>
