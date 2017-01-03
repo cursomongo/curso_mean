@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Audio y Vídeo</title>
+	<link rel="stylesheet" href="">
+	<style>
+		audio
+		{
+			border: 10px solid;
+		}
+		audio::-internal-media-controls-download-button {
+    display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
+	</style>
+</head>
+<body>
+	<header>
+		<hgroup>
+			<h1>Etiqueta AUDIO y VÍDEO</h1>
+		</hgroup>
+	</header>
+	<section>
+		<header>
+			<hgroup>
+				ETIQUETA AUDIO			
+			</hgroup>	
+		</header>
+		<article>
+			<audio autoplay controls>
+				<source src="http://www.htmlya.com.ar/html5/simulador/gallo.mp3" type="audio/mp3">
+				<source src="http://www.htmlya.com.ar/html5/simulador/gallo.ogg" type="audio/ogg">
+				<source src="http://www.htmlya.com.ar/html5/simulador/gallo.wav" type="audio/wav">
+				Tu navegador no soporta la etiqueta audio
+			</audio>
+		</article>
+	</section>
+	<section>
+		<header>
+			<hgroup>
+				ETIQUETA VIDEO
+			</hgroup>	
+		</header>
+	</section>
+	<article>
+		<video src="http://videos.mozilla.org/firefox/3.5/overview/overview.ogv" autoplay controls width="640" height="360"></video>
+			<source src="http://videos.mozilla.org/firefox/3.5/overview/overview.ogv" poster = "http://www.picz.ge/img/s2/1601/18/0/0863bc576645.jpg">
+	</article>
+	<input type="button" value="Hacer cosas al vídeo">
+</body>
+</html>

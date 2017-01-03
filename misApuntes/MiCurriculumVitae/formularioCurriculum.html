@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+	<header>
+		<hgroup>
+			FORMULARIO CURRICULUM
+		</hgroup>
+	</header>
+	<br/>
+	<section>
+	<form name="frmExperienciaProfesional" id="frmExperienciaProfesional" method="GET" action="kk.aspx" onsubmit="return comprobarformulario()">
+		Empresa: <input type="text" name="txtEmpresa" id="txtEmpresa"><br/>
+		Cargo: <input type="text" name="txtCargo" id="txtCargo"><br/>
+		Fecha Inicio: <input type="date" name="dateFinicio" id="dateFinicio"><br/>
+		Fecha Fin: <input type="date" name="dateFfin" id="dateFfin"><br/>
+		Localización: <input type="text" name="txtLocalizacion" id="txtLocalizacion"><br/>
+		<input type="button" value="Grabar" id = "btnGrabar"><br/>
+		<br/>
+		<hr>
+		JSON: <br>	<textarea name="JSON" id="" cols="30" rows="10"></textarea>
+		<br/>
+		<input type="button" value="Cargar JSON" id = "btnCargarJSON">
+		<br/>
+		<hr>
+		<section>
+			<header>Datos del JSON</header>
+			<br/><br/>
+			<article id ="ExperienciaProfesionalFormateada">
+				
+			</article>
+		</section>
+	</form>
+	</section>
+		<script>
+		document.getElementById("ExperienciaProfesionalFormateada").style.border = "thick solid #0000FF";
+	</script>
+</body>
+</html>

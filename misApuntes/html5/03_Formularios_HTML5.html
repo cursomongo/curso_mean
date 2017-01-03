@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Formulario HTML5</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<section>
+		<form name="miFormulario" id="miFormulario" method="get">
+			Email <input type="email" name="miEmail" id="miEmail" placeholder="manu@manuelazo.com"><br>
+			Text <input type="text" name="miText" id="miText" required value="texto"> <br>
+			Password <input type="password" name="miPassword" id="miPassword"> <br>
+			Date <input type="date" name="miDate" id="miDate"> <br>
+			Color <input type="color" name="miDate" id="miDate"> <br>
+			URL <input type="url" name="miURL" id="miURL" required value="http://www.terra.es"> <br>
+			Number <input type="number" name="minumber" id="minumber" min="5" max="50" step="5"> <br>
+			Date <input type="date" name="miDate" id="miDate"> <br>
+			Time <input type="time" name="miTime" id="miTime"> <br>
+			Mes <input type="month" name="miMonth" id="miMonth"> <br>
+			Semana <input type="week" name="miMonth" id="miMonth"> <br>
+			Teléfono <input type="tel" name="miTel" id="miTel"> <br>
+			Código Postal <input type="text" name="miCd" id="miCp" pattern="[0-9]{5}" required ><br/>
+			<datalist id = "informacion">
+				<option value="Madrid"></option>
+				<option value="Barcelona"></option>
+				<option value="Valencia"></option>
+				<option value="Sevilla"></option>
+			</datalist>
+			Información Datalist <input type="text" name="kk" id="kk" list="informacion"><br>
+			<input type="submit" value="Enviar"> <br>
+			<input type="reset" value="Limpiar datos"> <br>
+		</form>
+
+	</section>
+</body>
+</html>

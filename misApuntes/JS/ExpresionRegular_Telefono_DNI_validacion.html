@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Expresiones Regularres - Ejercicio 1</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <header>
+        <h1>Validación con Expresiones Regulares</h1>
+    </header>
+
+    <section>
+        <form onsubmit="return comprobarfrm(this)" name="frm" id="frm">
+            <input type="number" name="telefono" id="telefono">
+            <input type="text" name="dni" id="dni">
+            <input type="submit" value="Enviar">
+        </form>
+        <script>
+            function comprobarfrm(mifrm) {
+                var elmensajito = '';
+
+                if (/^[5-9]{1}\d{8}$/.test(mifrm.telefono.value == false) {
+                        elmensajito = "TELEFONO NO VALIDO";
+                    }
+                }
+        </script>
+    </section>
+</body>
+
+</html>
