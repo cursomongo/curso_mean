@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.serializeObject/2.0.3/jquery.serializeObject.min.js"></script>
 	<title></title>
 </head>
 <body>
@@ -19,12 +21,12 @@
 		Fecha Inicio: <input type="date" name="dateFinicio" id="dateFinicio"><br/>
 		Fecha Fin: <input type="date" name="dateFfin" id="dateFfin"><br/>
 		Localización: <input type="text" name="txtLocalizacion" id="txtLocalizacion"><br/>
-		<input type="button" value="Grabar" id = "btnGrabar"><br/>
+		<input type="button" value="Grabar" id = "btnGrabar" onclick="grabaExperiencias()"><br/>
 		<br/>
 		<hr>
-		JSON: <br>	<textarea name="JSON" id="" cols="30" rows="10"></textarea>
+		JSON: <br>	<textarea name="textAreaJSON" id="" cols="30" rows="10"></textarea>
 		<br/>
-		<input type="button" value="Cargar JSON" id = "btnCargarJSON">
+		<input type="button" value="Cargar JSON" id = "btnCargarJSON" onclick="cargarExperiencias()">
 		<br/>
 		<hr>
 		<section>
@@ -34,10 +36,22 @@
 				
 			</article>
 		</section>
+		<input type="file" name="mifile" id="mifile">
 	</form>
 	</section>
 		<script>
 		document.getElementById("ExperienciaProfesionalFormateada").style.border = "thick solid #0000FF";
+		function grabaExperiencias()
+		{
+			var data = JSON.stringify( $("#frmExperienciaProfesional").serializeArray() ); //  <-----------s
+			localStorage.setItem("experienciasLaborales2", localStorage.getItem("experienciasLaborales2") + data);
+		}
+
+		function cargarExperiencias()
+		{
+			$("#ExperienciaProfesionalFormateada").html(localStorage.getItem("experienciasLaborales2"));
+		}
 	</script>
+	
 </body>
 </html>

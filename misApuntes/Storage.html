@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>WebStorage</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<header>
+		WEB STORAGE
+	</header>
+	<section>
+		<form name="frm" id ="frm">
+			Nombre: <input type="text" name="minombre" id="minombre"><br>
+			Apellido: <input type="text" name="miapellido" id="miapellido"><br><br>
+			Donde guardar: <input type="radio" name="webStorage" id="local">LocalStorage <input type="radio" name="webStorage" id="session">SessionStorage
+			<br><br>
+			<input type="button" value="Guardar" ID="btnGuardar" onclick="guardarDatosWebStorage()">
+			<br>
+			<hr>
+			<br>
+			<input type="button" value="Cargar Elementos" ID="btnVer">
+			<div id="datosGuardados" style="display: none;">
+				
+			</div>
+		</form>
+	</section>
+	<script>
+		function guardarDatosWebStorage()
+		{
+			if (!document.getElementsByName("webStorage").value)
+			{
+				alert("Selecciona local o session STORAGE");
+				return;
+			}
+			else if (document.getElementsByName("webStorage").value == 'local')
+			{
+				localStorage.setItem("nombre", window.minombre.value);
+				localStorage.setItem("apellido", window.miapellido.value);	
+			}
+			else
+			{
+				sessionStorage.setItem("nombre", window.minombre.value);
+				sessionStorage.setItem("apellido", window.miapellido.value);
+			}
+			alert ("Datos Guardados");
+		}
+
+		function verDatosWebStorage()
+		{
+			if (document.getElementsByName("webStorage").value == 'local')
+			{
+				document.getElementById("datosGuardados").innerHTML =  localStorage.getItem("nombre") + " -- " + localStorage.getItem("apellido");	
+			}
+			else
+			{
+				document.getElementById("datosGuardados").innerHTML =  sessionStorage.getItem("nombre") + " -- " + sessionStorage.getItem("apellido");	
+			}
+		}
+	</script>
+</body>
+</html>
