@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de posicion</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+    	.perseguirRaton
+    	{
+			position: relative;
+			left: 10px;
+	  		top: 10px;
+		  	width: 40px;
+		  	height: 40px;
+		  	background-color: blue;
+		  	color: white;
+    	}
+    </style>
+    <script>
+    	$(document).ready(function() {
+    		$(document).mousemove(actualizarCoordenadas);
+    	})
+
+    	function actualizarCoordenadas()
+    	{
+			$("#coordx").text("Coordenada x="+event.clientX);
+	    	$("#coordy").text("Coordenada y="+event.clientY);
+	    	$("#cuadrado").html(event.clientX + " - " + event.clientY);
+	    	$("#cuadrado").css({top: event.clientY, left: event.clientX, position:'absolute'});
+    	}
+    </script>
+</head>
+<body>
+    <p id="coordx">Coordenada x=</p>
+    <p id="coordy">Coordenada y=</p>
+    <div id="cuadrado" class="perseguirRaton">1</div>
+</body>
+</html>

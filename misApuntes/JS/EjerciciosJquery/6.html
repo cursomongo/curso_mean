@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de over hover</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	<style>
+		.clase
+		{
+			border: 55px solid red;
+		}
+	</style>
+    <script>
+
+	    $(document).ready(function() {
+	    	inicializarEventos();
+	    })
+
+	    function inicializarEventos()
+	    {
+	    	
+	    	$('a').hover(inMouseEvent, outMouseEvent);
+	    }
+
+    	function inMouseEvent()
+    	{
+    		$(this).addClass('clase');
+    	}
+
+    	function outMouseEvent()
+    	{
+    		//alert($(this).html());
+    		$(this).removeClass('clase');
+    	}    	
+    </script>
+</head>
+<body>
+   <a href="http://www.google.es">A google</a>
+   <br/>
+   <a href="http://www.yahoo.es">A yahoo</a>
+   <br/>
+   <a href="http://www.duckduckgo.com">Duck Duck Go</a>
+</body>
+</html>

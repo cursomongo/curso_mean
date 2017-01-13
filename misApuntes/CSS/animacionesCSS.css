@@ -1,0 +1,66 @@
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+from {left: 0px;}
+to {left: 300px;}
+}
+/* Standard syntax */
+@keyframes mymove {
+from {left: 0px;}
+to {left: 300px;}
+}
+
+div {
+width: 100px;
+height: 50px;
+background-color: red;
+font-weight: bold;
+position: relative;
+-webkit-animation-name: mymove; /* Chrome,
+Safari, Opera */
+-webkit-animation-duration: 5s; /* Chrome,
+Safari, Opera */
+animation-name: mymove;
+animation-duration: 5s;
+}
+/* Chrome, Safari, Opera */
+#div1 {-webkit-animation-timing-function: linear;}
+#div2 {-webkit-animation-timing-function: ease;}
+#div3 {-webkit-animation-timing-function: ease-in;}
+#div4 {-webkit-animation-timing-function: easeout;}
+#div5 {-webkit-animation-timing-function: ease-inout;}
+/* Standard syntax */
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+
+h1, p{
+	color: blue;
+	animation-duration: 2s;
+	animation-name: slidein;
+	animation-direction: alternate-reverse;
+	animation-iteration-count: infinite;  
+}
+
+@keyframes slidein {
+ from {
+ margin-left: 100%;
+ width: 300%
+ }
+
+ 25% {
+ font-size: 500%;
+ margin-left: 25%;
+ width: 150%;	
+ }
+ 75% {
+ font-size: 1300%;
+ margin-left: 25%;
+ width: 150%;
+ }
+
+ to {
+ margin-left: 0%;
+ width: 100%;
+ }

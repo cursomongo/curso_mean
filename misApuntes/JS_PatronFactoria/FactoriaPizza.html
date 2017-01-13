@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Patrón Factory</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	function PizzaFactory(){       
+    this.crearPizza = function(type){
+        if (type === "PizzaSuprema") {
+            return PizzaSuprema();
+        }else if (type === "PizzaVegetariana"){
+            return PizzaVegetariana();
+        };
+    }
+ 
+    function Pizza(ing,precio){
+        this.Ingredientes =ing;
+        this.Precio = precio;
+    }
+ 
+    function PizzaSuprema(){
+        return new Pizza(["jamon","queso","salsa","carne"],
+                    150);
+    }
+ 
+    function PizzaVegetariana(){
+        return new Pizza(["tomate","queso","salsa"],
+            150);
+    }
+}
+ 
+var factory = new PizzaFactory();
+var pizza = factory.crearPizza("PizzaVegetariana");
+ 
+console.log(pizza);
+console.log(pizza.name);
+console.log(pizza.isPrototypeOf("PizzaSuprema"));
+console.log(pizza.isPrototypeOf("PizzaVegetariana"));
+console.log(pizza.constructor.name);
+console.log(typeof pizza);
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function($) {
+
+    $.ajax(
+        { 
+        url: "http://www.comv.es/galeria/newGal.aspx?gal=35",
+        success: function(data) {
+            var html = $.parseHTML( data ), 
+                img = $('.pgwSlideshow'+find('[class*="elt_"]').find('span').find('img')),
+                len = img.length; 
+            if( len > 0 ){
+                var src = img.first().attr("src"); // get id of first image
+            } else {
+                console.log("Image not found");
+            }
+            console.log(src);
+
+            image_tag='<img src="'+src+ '"/>';
+            $( "body" ).append(image_tag);
+        } 
+    });
+});
+
+</script>
+
+<!--
+    <div id="imagenes"></div>
+</form>
+    <script type="text/javascript">
+        document.getElementById('btn').onclick = function() {
+            var val = document.getElementById('imagename').value,
+                src = 'http://www.comv.es/galeria/newGal.aspx?gal=' + val +'.png',
+                img = document.createElement('img');
+
+            img.src = src;
+            document.body.appendChild(img);
+        }
+    </script>
+
+    <script>
+    for (var i = 1; i <= 100; i+) {
+    	
+    	$( "body" ).append( "<h1>GALERÍA DE IMÁGENES 1 - " + $('#lbTituloGal').html() + ("</h1>") );
+    	$('.pgwSlideshow'+find('[class*="elt_"]').find('span').find('img');
+
+    		.each( function()
+
+attr("src");
+});
+    </script> -->
+</body>
+</html>
+

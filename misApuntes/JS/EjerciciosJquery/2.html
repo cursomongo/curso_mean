@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 1 Jquery</title>
+	<link rel="stylesheet" href="">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+	
+	$(document).ready(inicializarEventos);
+
+		function inicializarEventos()
+		{
+			$("#id1").click(presionTitulo1);
+    		$("#id2").click(presionTitulo2);
+		}
+
+		function presionTitulo1()
+		{
+			$(this).css({
+				background: 'orange',
+				color: 'black'
+			});
+		}
+
+		function presionTitulo2()
+		{
+			$(this).css({
+				background: 'green',
+				color: 'white'
+			});
+		}
+
+		
+	</script>
+</head>
+<body>
+	<h1 id = "id1">H1 UNO</h1>
+	<h1 id = "id2">H1 DOS</h1>
+	
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo jquery tablas</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        .fondoVerde
+        {
+            background-color: green;
+        }
+    </style>
+    <script>
+        jQuery(document).ready(inicializarEventos);
+
+        function inicializarEventos()
+        {
+            $("td").click(function () {
+                    //alert($(this).parent().length);
+                //if ($(this).parent().attr('class', 'fondoVerde') == 0)
+                if (! $(this).parent().hasClass('fondoVerde') )
+                //if ( $('tr.fondoVerde').length == 0 )
+                {
+                    $(this).parent().addClass('fondoVerde');
+                }
+                else
+                {
+                    $(this).parent().removeClass('fondoVerde');   
+                }
+                
+            });
+        }
+    </script>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+    </tr>
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+    </tr>
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eius totam perferendis, tempora nam incidunt itaque, cum, accusamus numquam repellendus? Quam cupiditate quis tenetur architecto accusantium eum, obcaecati magni?</td>
+    </tr>
+</body>
+</html>

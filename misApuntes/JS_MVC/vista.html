@@ -1,0 +1,31 @@
+<html>
+ 
+    <head>
+        <script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+ 
+        <!-- Using function returning an Object literal (my preference) -->
+        <script type="text/javascript" src="controlador.js"></script>
+        <script type="text/javascript" src="modelo.js"></script>
+ 
+        <!-- Using Prototype -->
+        <!--<script type="text/javascript" src="js/controllers/FormController_prototype.js" ></script>-->
+        <!--<script type="text/javascript" src="js/models/FormModel_prototype.js"></script>-->
+ 
+        <script type="text/javascript">
+ 
+            $(document).ready(function() {
+                new FormController().init();
+            });
+ 
+        </script>
+ 
+    </head>
+ 
+    <body>
+        Ancho: <input type="text" id="txtancho" name="inputtext" value="" />
+        Alto: <input type="text" id="txtalto" name="inputtext" value="" />        
+        <input type="button" id="btnCalcular" value="Calcular"/>
+        <input type="button" id="btnLimpiar" value="Limpiar"/>
+    </body>
+ 
+</html>

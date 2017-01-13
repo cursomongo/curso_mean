@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de gestion de dom</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(document).ready(inicializaEventos);
+
+		function inicializaEventos()
+		{
+			
+			$('#boton1').click(mostrar);
+			$('#boton1').click(ver);
+			$('#boton2').click(ocultar);			
+
+			$('#frm').css({display: 'none'});
+		}
+
+		function mostrar()
+		{
+			$('#frm').show();
+		}
+
+		function ocultar()
+		{
+			$('#frm').hide();
+		}
+
+		function ver(kk)
+		{
+			alert(kk.target.toString());
+		}
+
+
+
+	</script>
+</head>
+<body>
+    <input type="button" id="boton1" value="Mostrar formulario"/>
+    <input type="button" id="boton2" value="Suprimir formulario"/>
+    <hr>
+    a
+    <div id="formulario">
+	    <form id = "frm">
+			<label for="element1">Nombre</label>
+	    		<input type="text" name="element1" id="idelement1">
+	    	<label for="element2">Apellido</label>
+	    		<input type="text" name="element2" id="idelement2">
+	    	<br><br>
+			<input type="submit" value="Enviar">
+			<input type="reset" value="Limpiar">
+		</form>		
+	b
+    </div>
+</body>
+    <script>
+    	$('#frm').submit(function(event) {
+    		var $inputs = $('#frm :input[name^="eleme"]');
+    		var values = {};
+		    $inputs.each(function() {
+        		alert(values[this.name] = $(this).val());
+    		});
+    		event.preventDefault();
+    	});
+    </script>
+</html>
